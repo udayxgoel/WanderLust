@@ -4,19 +4,7 @@ const mapAPI = process.env.MAP_API;
 maptilerClient.config.apiKey = mapAPI;
 
 module.exports.index = async (req, res) => {
-    const { category, country } = req.query;
-    const query = {};
-    if (category) {
-        query.category = category;
-    }
-    if (country) {
-        query.country = new RegExp(country, 'i');
-    }
-    const allListings = await Listing.find(query);
-    if (allListings.length===0) {
-        req.flash("error", "Soory! No listing available for now");
-        return res.redirect("/listings");
-    }
+    const allListings = await Listing.find({});
     res.render("listings/index.ejs", { allListings });
 };
 
@@ -38,7 +26,7 @@ module.exports.createListing = async (req, res) => {
     const result = await maptilerClient.geocoding.forward(req.body.listing.location, { limit: 1 });
     let url = req.file.path;
     let filename = req.file.filename;
-    
+
     const newListing = new Listing(req.body.listing);
     newListing.owner = req.user._id;
     newListing.image = { url, filename };
@@ -79,5 +67,18 @@ module.exports.destroyListing = async (req, res) => {
     await Listing.findByIdAndDelete(id);
     req.flash("success", "Listing Deleted!");
     res.redirect("/listings");
+};
+
+module.exports.filter = async (req, res, next) => {
+    let { id } = req.params;
+    let allListings = await Listing.find({ category: { $all: [id] } });
+    console.log(allListings);
+    if (allListings.length != 0) {
+        res.locals.success = `Listings Find by ${id}`;
+        res.render("listings/index.ejs", { allListings });
+    } else {
+        req.flash("error", "Listings is not here !!!");
+        res.redirect("/listings");
+    }
 };
 

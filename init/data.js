@@ -1,34 +1,34 @@
 const sampleListings = [
   {
-    title: "Cozy Beachfront Cottage",
+    title: "Beachfront Paradise",
     description:
-      "Escape to this charming beachfront cottage for a relaxing getaway. Enjoy stunning ocean views and easy access to the beach.",
+      "Step out of your door onto the sandy beach. This beachfront condo offers the ultimate relaxation.",
     image: {
       filename: "listingimage",
-      url: "https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      url: "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGhvdGVsc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
     },
-    price: 1500,
-    location: "Malibu",
-    country: "United States",
+    price: 2000,
+    location: "Cancun",
+    country: "Mexico",
     geometry: {
       type: "Point",
-      coordinates: [-118.7815, 34.0259], // Longitude, Latitude
+      coordinates: [-86.8515, 21.1619], // Longitude, Latitude
     },
   },
   {
-    title: "Modern Loft in Downtown",
+    title: "Safari Lodge in the Serengeti",
     description:
-      "Stay in the heart of the city in this stylish loft apartment. Perfect for urban explorers!",
+      "Experience the thrill of the wild in a comfortable safari lodge. Witness the Great Migration up close.",
     image: {
       filename: "listingimage",
-      url: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      url: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fG1vdW50YWlufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
     },
-    price: 1200,
-    location: "New York City",
-    country: "United States",
+    price: 4000,
+    location: "Serengeti National Park",
+    country: "Tanzania",
     geometry: {
       type: "Point",
-      coordinates: [-74.0060, 40.7128], // Longitude, Latitude
+      coordinates: [34.8385, -2.3333], // Longitude, Latitude
     },
   },
   {
@@ -80,19 +80,19 @@ const sampleListings = [
     },
   },
   {
-    title: "Beachfront Paradise",
+    title: "Cozy Beachfront Cottage",
     description:
-      "Step out of your door onto the sandy beach. This beachfront condo offers the ultimate relaxation.",
+      "Escape to this charming beachfront cottage for a relaxing getaway. Enjoy stunning ocean views and easy access to the beach.",
     image: {
       filename: "listingimage",
-      url: "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGhvdGVsc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      url: "https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
     },
-    price: 2000,
-    location: "Cancun",
-    country: "Mexico",
+    price: 1500,
+    location: "Malibu",
+    country: "United States",
     geometry: {
       type: "Point",
-      coordinates: [-86.8515, 21.1619], // Longitude, Latitude
+      coordinates: [-118.7815, 34.0259], // Longitude, Latitude
     },
   },
   {
@@ -144,19 +144,19 @@ const sampleListings = [
     },
   },
   {
-    title: "Safari Lodge in the Serengeti",
+    title: "Modern Loft in Downtown",
     description:
-      "Experience the thrill of the wild in a comfortable safari lodge. Witness the Great Migration up close.",
+      "Stay in the heart of the city in this stylish loft apartment. Perfect for urban explorers!",
     image: {
       filename: "listingimage",
-      url: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fG1vdW50YWlufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+      url: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
     },
-    price: 4000,
-    location: "Serengeti National Park",
-    country: "Tanzania",
+    price: 1200,
+    location: "New York City",
+    country: "United States",
     geometry: {
       type: "Point",
-      coordinates: [34.8385, -2.3333], // Longitude, Latitude
+      coordinates: [-74.0060, 40.7128], // Longitude, Latitude
     },
   },
   {
