@@ -61,6 +61,29 @@ body {
   font-size: 1rem;
 }
 
+.dropdown button {
+  background-color: #e5e4e2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 1rem;
+  border: none !important;
+}
+
+.dropdown-menu {
+  margin-top: 0.5rem !important;
+  width: 14rem;
+  padding: 0.7rem;
+  transform: translateX(-65%);
+}
+
+.dropdown ul li a b {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 /* footer */
 .f-info-links a {
   text-decoration: none;

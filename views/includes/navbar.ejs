@@ -37,12 +37,50 @@
         </form>
       </div>
       <div class="navbar-nav ms-auto">
-        <% if(!currUser) {%>
-        <a class="nav-link" href="/login"><b>Log in</b></a>
-        <a class="nav-link" href="/signup"><b>Sign up</b></a>
-        <% } %> <% if(currUser) {%>
-        <a class="nav-link" href="/logout">Log out</a>
-        <% } %>
+        <div class="dropdown">
+          <button
+            class="btn dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img src="/assets/navbar-icon-user.png" alt="" width="30px" />
+          </button>
+          <ul class="dropdown-menu">
+            <% if(!currUser) {%>
+            <li>
+              <a class="nav-link" href="/signup"
+                ><b><i class="fa-solid fa-user-plus"></i>Sign up</b></a
+              >
+            </li>
+            <li>
+              <a class="nav-link" href="/login"
+                ><b><i class="fa-solid fa-user-check"></i>Log in</b></a
+              >
+            </li>
+            <% } %> <% if(currUser) {%>
+            <li>
+              <a class="nav-link">
+                <b><i class="fa-solid fa-user"></i><%= currUser.username %></b>
+              </a>
+            </li>
+            <li>
+              <a class="nav-link" href="/logout"
+                ><b
+                  ><i class="fa-solid fa-arrow-right-from-bracket"></i>Log
+                  out</b
+                ></a
+              >
+            </li>
+            <% } %>
+            <hr />
+            <li>
+              <a class="nav-link" href="/logout"
+                ><b><i class="fa-solid fa-circle-plus"></i>Rent your home</b></a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
