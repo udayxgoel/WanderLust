@@ -85,6 +85,7 @@ body {
 }
 
 /* footer */
+
 footer ul {
   padding: 0;
 }
@@ -94,6 +95,7 @@ footer ul li {
 }
 
 /* cards */
+
 .listing-card {
   border: none !important;
   margin-bottom: 2rem;
@@ -118,6 +120,7 @@ footer ul li {
 }
 
 /* Card effect */
+
 .card-img-overlay {
   opacity: 0;
 }
@@ -138,7 +141,7 @@ footer ul li {
 /* show page */
 
 .show-img {
-  height: 30vh;
+  height: 67vh;
 }
 
 .btns {
@@ -146,6 +149,7 @@ footer ul li {
 }
 
 /*edit page*/
+
 .preview-img {
   width: 250px !important;
   height: 150px !important;
@@ -162,7 +166,8 @@ footer ul li {
 }
 
 /* map */
+
 #map {
-  height: 400px;
-  width: 80vh;
+  height: 450px;
+  /* width: 0vh; */
 }
