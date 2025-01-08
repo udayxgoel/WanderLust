@@ -7,9 +7,6 @@ for (let taxSwitch of taxSwitchs) {
     for (tax of taxInfo) {
       if (tax.style.display != "inline") {
         tax.style.display = "inline";
-        for (const changeA of changeAfter) {
-          changeA.innerHTML = "Display total after taxes ..";
-        }
       } else {
         tax.style.display = "none";
       }
@@ -19,9 +16,6 @@ for (let taxSwitch of taxSwitchs) {
         price.style.display = "none";
       } else {
         price.style.display = "inline";
-        for (const changeA of changeAfter) {
-          changeA.innerHTML = "Display total before taxes ";
-        }
       }
     }
   });
