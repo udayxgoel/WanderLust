@@ -1,7 +1,7 @@
 <% layout('/layouts/boilerplate') -%>
 <script>
-    const mapAPI="<%=process.env.MAP_API%>";
-    const coordinates = <%- JSON.stringify(listing.geometry.coordinates) %>;
+    const mapToken = "<%=process.env.MAP_TOKEN%>";
+    const coordinates = JSON.parse('<%- JSON.stringify(listing.geometry.coordinates) %>');
 </script>
 
 <div class="row mt-3">
@@ -30,11 +30,9 @@
         </form>
     </div>
     <% } %>
-<hr>
-    <div class="col-8 offset-2 mb-3">
-        <h3 style="font-size: 1.7rem;">Where you'll be</h3>
-        <div id="map"></div>
+    <div class="col-8 offset-2">
+        <h3>Where you'll be</h3>
+        <div id="map" style="height: 450px;"></div>
     </div>
 </div>
-
-<script src="/js/map.js"></script>
+<script src="/js/script.js"></script>
