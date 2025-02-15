@@ -14,10 +14,10 @@ const MongoStore = require("connect-mongo");
 const flash = require("connect-flash");
 const passport = require("passport");
 const localStrategy = require("passport-local");
-const User = require("./models/user.js");
+const User = require("./models/userModel.js");
 
-const listingsRouter = require("./routes/listing.js");
-const userRouter = require("./routes/user.js");
+const listingsRouter = require("./routes/listingRoute.js");
+const userRouter = require("./routes/userRoute.js");
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));

@@ -7,10 +7,10 @@ const {
   validateListing,
 } = require("../middlewares/middleware.js");
 const multer = require("multer");
-const { storage } = require("../cloud/cloudConfig.js");
+const { storage } = require("../config/cloudinaryConfig.js");
 const upload = multer({ storage });
 
-const listingController = require("../controllers/listing.js");
+const listingController = require("../controllers/listingController.js");
 
 router.get("/search", wrapAsync(listingController.search));
 
