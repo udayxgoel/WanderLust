@@ -1,10 +1,6 @@
-if (process.env.NODE_ENV != "production") {
-  require("dotenv").config();
-}
-
+require("dotenv").config();
 const express = require("express");
-const app = express();
-const mongoose = require("mongoose");
+const { connectDB } = require("./config/dbConfig.js");
 const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
@@ -15,9 +11,15 @@ const flash = require("connect-flash");
 const passport = require("passport");
 const localStrategy = require("passport-local");
 const User = require("./models/userModel.js");
-
 const listingsRouter = require("./routes/listingRoute.js");
 const userRouter = require("./routes/userRoute.js");
+
+// app config
+const app = express();
+const PORT = process.env.PORT || 4000;
+
+// db connection
+connectDB();
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -26,23 +28,8 @@ app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public")));
 app.engine("ejs", ejsMate);
 
-const dbUrl = process.env.ATLASDB_URL;
-
-main()
-  .then(() => {
-    console.log("connected to db");
-  })
-  .catch((err) => {
-    console.log("not connected to db");
-    console.log(err);
-  });
-
-async function main() {
-  await mongoose.connect(dbUrl);
-}
-
 const store = MongoStore.create({
-  mongoUrl: dbUrl,
+  mongoUrl: process.env.MONGODB_URL,
   crypto: {
     secret: process.env.SECRET,
   },
@@ -96,6 +83,6 @@ app.use((err, req, res, next) => {
   res.status(statusCode).render("listings/error.ejs", { message });
 });
 
-app.listen(8080, () => {
-  console.log("server is listening  on 8080");
+app.listen(PORT, () => {
+  console.log(`Server Started on http://localhost:${PORT}`);
 });
