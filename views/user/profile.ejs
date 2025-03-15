@@ -1,0 +1,50 @@
+<% layout('/layouts/boilerplate') -%>
+
+<div class="dashboard-container">
+  <ul class="nav nav-tabs dashboard-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" data-bs-toggle="tab" href="#profile">
+        <i class="fa-solid fa-user"></i> My Profile
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="tab" href="#bookings">
+        <i class="fa-solid fa-calendar-check"></i> My Bookings
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="tab" href="#listings">
+        <i class="fa-solid fa-house"></i> My Listings
+      </a>
+    </li>
+  </ul>
+  <div class="tab-content mt-4">
+    <!-- Profile Tab -->
+    <div id="profile" class="tab-pane fade show active">
+      <div class="card p-4">
+        <h3><i class="fa-solid fa-user"></i> Profile Details</h3>
+        <p class="mt-2"><strong>Name:</strong> Uday Goel</p>
+        <p><strong>Email:</strong> udaygoel@gmail.com</p>
+        <a href="/user/logout" class="btn btn-danger">
+          <i class="fa-solid fa-sign-out-alt"></i> Logout
+        </a>
+      </div>
+    </div>
+
+    <!-- Bookings Tab -->
+    <div id="bookings" class="tab-pane fade">
+      <div class="card p-4">
+        <h3><i class="fa-solid fa-calendar-check"></i> My Bookings</h3>
+        <p>Here you can see all your bookings...</p>
+      </div>
+    </div>
+
+    <!-- Listings Tab -->
+    <div id="listings" class="tab-pane fade">
+      <div class="card p-4">
+        <h3><i class="fa-solid fa-house"></i> My Listings</h3>
+        <p>Here you can see all your listings...</p>
+      </div>
+    </div>
+  </div>
+</div>

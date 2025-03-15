@@ -30,9 +30,9 @@
     <link rel="stylesheet" href="/css/filter.css" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   </head>
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <%- include("../includes/navbar.ejs") -%>
-    <div class="container-fluid px-5">
+    <div class="container-fluid flex-grow-1 px-5">
       <%- include("../includes/flash.ejs") -%> <%- body %>
     </div>
     <%- include("../includes/footer.ejs") -%>

@@ -37,54 +37,27 @@
         </form>
       </div>
       <div class="navbar-nav ms-auto">
-        <div class="dropdown">
+        <a
+          href="<%= currUser ? '/user/profile' : '/user/login' %>"
+          class="text-decoration-none"
+        >
           <button
-            class="btn dropdown-toggle"
-            type="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
+            class="btn d-flex align-items-center gap-2 border-0 px-3 py-2"
+            style="background-color: #f0f0f0; border-radius: 10px; color: black"
           >
+            <i class="fa-solid fa-bars fs-5 text-secondary"></i>
             <img
               src="/assets/navbar-icon-user.png"
               alt="user-icon"
               width="30"
             />
-          </button>
-          <ul class="dropdown-menu">
-            <% if(!currUser) {%>
-            <li>
-              <a class="nav-link" href="/signup"
-                ><b><i class="fa-solid fa-user-plus"></i>Sign up</b></a
-              >
-            </li>
-            <li>
-              <a class="nav-link" href="/login"
-                ><b><i class="fa-solid fa-user-check"></i>Log in</b></a
-              >
-            </li>
-            <% } %> <% if(currUser) {%>
-            <li>
-              <a class="nav-link">
-                <b><i class="fa-solid fa-user"></i><%= currUser.username %></b>
-              </a>
-            </li>
-            <li>
-              <a class="nav-link" href="/logout"
-                ><b
-                  ><i class="fa-solid fa-arrow-right-from-bracket"></i>Log
-                  out</b
-                ></a
-              >
-            </li>
+            <% if (currUser) { %>
+            <p class="mb-0 fw-bold" style="color: black">
+              <%= currUser.username %>
+            </p>
             <% } %>
-            <hr />
-            <li>
-              <a class="nav-link" href="/listings/new"
-                ><b><i class="fa-solid fa-circle-plus"></i>Rent your home</b></a
-              >
-            </li>
-          </ul>
-        </div>
+          </button>
+        </a>
       </div>
     </div>
   </div>

@@ -1,7 +1,7 @@
 const User = require("../models/userModel.js");
 
 module.exports.renderSignupForm = (req, res) => {
-  res.render("users/signup.ejs");
+  res.render("user/signup.ejs");
 };
 
 module.exports.signup = async (req, res) => {
@@ -18,18 +18,22 @@ module.exports.signup = async (req, res) => {
     });
   } catch (error) {
     req.flash("error", error.message);
-    res.redirect("/signup");
+    res.redirect("/user/signup");
   }
 };
 
 module.exports.renderLoginForm = (req, res) => {
-  res.render("users/login.ejs");
+  res.render("user/login.ejs");
 };
 
 module.exports.login = async (req, res) => {
   req.flash("success", "Welcome back to Wanderlust!");
   let redirectUrl = res.locals.redirectUrl || "/listings";
   res.redirect(redirectUrl);
+};
+
+module.exports.profile = async (req, res) => {
+  res.render("user/profile.ejs");
 };
 
 module.exports.logout = (req, res, next) => {

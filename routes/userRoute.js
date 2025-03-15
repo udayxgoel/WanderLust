@@ -19,11 +19,14 @@ router
   .post(
     saveRedirectUrl,
     passport.authenticate("local", {
-      failureRedirect: "/login",
+      failureRedirect: "/user/login",
       failureFlash: true,
     }),
     wrapAsync(userController.login)
   );
+
+//profile route
+router.route("/profile").get(userController.profile);
 
 //logout route
 router.get("/logout", userController.logout);

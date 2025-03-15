@@ -46,7 +46,8 @@ app.use((req, res, next) => {
 // Routes
 app.get("/", (req, res) => res.redirect("/listings"));
 app.use("/listings", listingsRouter);
-app.use("/", userRouter);
+// app.use("/bookings", bookingsRouter);
+app.use("/user", userRouter);
 
 // Handle All
 app.all("*", (req, res, next) =>
