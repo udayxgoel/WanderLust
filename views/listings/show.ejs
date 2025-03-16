@@ -1,37 +1,164 @@
 <% layout('/layouts/boilerplate') -%>
 <script>
-    const mapToken = "<%=process.env.MAP_TOKEN%>";
-    const coordinates = JSON.parse('<%- JSON.stringify(listing.geometry.coordinates) %>');
+  const mapToken = "<%=process.env.MAP_TOKEN%>";
+  const coordinates = JSON.parse(
+    "<%- JSON.stringify(listing.geometry.coordinates) %>"
+  );
 </script>
 
-<div class="row mt-3">
-    <div class="col-8 offset-2">
-        <h2><%= listing.title %></h2>
+<div class="container mt-4">
+  <div class="row">
+    <h2><%= listing.title %></h2>
+    <p>
+      <i class="fa-solid fa-location-dot"></i
+      ><i class="mx-2"><%= listing.address %></i>
+    </p>
+    <!-- Listing Image -->
+    <div class="col-12">
+      <img
+        src="<%= listing.image.url %>"
+        class="img-fluid rounded listing-image"
+        alt="listing_image"
+      />
     </div>
-    <div class="card col-8 offset-2 show-card listing-card">
-        <img src="<%= listing.image.url %>" class="card-img-top show-img" alt="listing_image">
-        <div class="card-body mx-2">
-            <p class="card-text">
-                <p><b>Hosted by: </b><i><%= listing.owner.username %></b></i></p>
-                <p><b>Description: </b><%= listing.description %></p>
-                <p><b>Price: </b>&#8377; <%= listing.price.toLocaleString("en-IN") %></p>
-                <p><b>Category: </b>Beach</p>
-                <p><b>Location: </b><%= listing.location %></p>
-                <p><b>Country: </b><%= listing.country %></p>
-            </p>
+  </div>
+
+  <div class="row mt-4">
+    <!-- Left Section: Description & Amenities -->
+    <div class="col-md-7">
+      <h2 class="fw-bold">Description</h2>
+      <p><%= listing.description %></p>
+
+      <p><b>Max number of guests: </b><%= listing.maxGuests %></p>
+
+      <h4 class="fw-bold mt-4">What this place offers</h4>
+      <div class="row mt-2">
+        <% const perks = listing.perks; %>
+
+        <div class="col-6">
+          <% if (perks.includes("Wifi")) { %>
+          <p><i class="fa-solid fa-wifi"></i> Wifi</p>
+          <% } %> <% if (perks.includes("Free parking spot")) { %>
+          <p><i class="fa-solid fa-car"></i> Free parking spot</p>
+          <% } %> <% if (perks.includes("Pets")) { %>
+          <p><i class="fa-solid fa-paw"></i> Pets</p>
+          <% } %>
         </div>
+
+        <div class="col-6">
+          <% if (perks.includes("TV")) { %>
+          <p><i class="fa-solid fa-tv"></i> TV</p>
+          <% } %> <% if (perks.includes("Radio")) { %>
+          <p><i class="fa-solid fa-radio"></i> Radio</p>
+          <% } %> <% if (perks.includes("Private entrance")) { %>
+          <p><i class="fa-solid fa-door-closed"></i> Private entrance</p>
+          <% } %>
+        </div>
+      </div>
     </div>
 
-    <% if(currUser && currUser._id.equals(listing.owner._id)) { %>
-    <div class="btns">
-        <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark col-1 offset-2 edit-btn">Edit</a>
-        <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE" style="display: inline;">
-            <button class="btn btn-dark offset-2">Delete</button>
-        </form>
+    <!-- Right Section: Booking Box -->
+    <div class="col-md-5">
+      <form
+        action="/youtube"
+        id="bookingForm"
+        novalidate
+        class="needs-validation"
+      >
+        <div class="px-4 pb-4 shadow rounded bg-white">
+          <p class="fw-bold fs-4">
+            Price:
+            <span class="text-dark">
+              &#8377;<%= listing.price.toLocaleString("en-IN") %>
+            </span>
+            / per night
+          </p>
+
+          <!-- Dates -->
+          <div class="mb-3">
+            <label class="fw-bold form-label">Dates</label>
+            <input
+              type="text"
+              id="dateRange"
+              class="form-control"
+              placeholder="Select check-in and check-out"
+              required
+            />
+            <div class="invalid-feedback">
+              Please select check-in and check-out dates.
+            </div>
+          </div>
+
+          <!-- Guests -->
+          <div class="mb-3">
+            <label class="fw-bold form-label">Number of guests:</label>
+            <input
+              type="number"
+              id="guests"
+              class="form-control"
+              value="<%= listing.maxGuests %>"
+              min="1"
+              max="<%= listing.maxGuests %>"
+              required
+            />
+            <div class="invalid-feedback">
+              Enter a valid number of guests (1 to <%= listing.maxGuests %>).
+            </div>
+          </div>
+
+          <!-- Full Name -->
+          <div class="mb-3">
+            <label class="fw-bold form-label">Your full name:</label>
+            <input
+              type="text"
+              id="fullName"
+              class="form-control"
+              value=""
+              placeholder="Enter your name"
+              required
+            />
+            <div class="invalid-feedback">Please enter your full name.</div>
+          </div>
+
+          <!-- Phone Number -->
+          <div class="mb-3">
+            <label class="fw-bold form-label">Phone number:</label>
+            <input
+              type="tel"
+              id="phoneNumber"
+              class="form-control"
+              placeholder="Enter your phone number"
+              pattern="[0-9]{10}"
+              required
+            />
+            <div class="invalid-feedback">
+              Enter a valid 10-digit phone number.
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button
+            id="bookBtn"
+            class="btn btn-danger w-100 py-2 fw-bold"
+            data-price="<%= listing.price %>"
+            type="submit"
+          >
+            Book this place &#8377;<span id="totalAmount">0</span>
+          </button>
+        </div>
+      </form>
     </div>
-    <% } %>
-    <div class="col-8 offset-2">
-        <h3>Where you'll be</h3>
-        <div id="map" style="height: 450px;"></div>
-    </div>
+  </div>
+  <hr />
+  <!-- Extra Info -->
+  <div class="row mt-4">
+    <h2 class="fw-bold">Extra Info</h2>
+    <p><%= listing.extraInfo %></p>
+  </div>
+  <hr />
+  <!-- Map -->
+  <div class="row my-4">
+    <h2 class="fw-bold">Where you’ll be</h2>
+    <div class="mt-2" id="map" style="height: 450px"></div>
+  </div>
 </div>

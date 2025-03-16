@@ -30,3 +30,39 @@ const map = new mapboxgl.Map({
 });
 
 const marker1 = new mapboxgl.Marker().setLngLat(coordinates).addTo(map);
+
+// Booking Price Calculator
+document.addEventListener("DOMContentLoaded", () => {
+  const dateInput = document.getElementById("dateRange");
+  const totalAmount = document.getElementById("totalAmount");
+  const bookBtn = document.getElementById("bookBtn");
+  const pricePerNight = parseFloat(bookBtn.dataset.price);
+
+  // Initialize Flatpickr for date selection
+  flatpickr(dateInput, {
+    mode: "range",
+    dateFormat: "M d, Y",
+    minDate: "today",
+    defaultDate: [
+      new Date(),
+      new Date(new Date().setDate(new Date().getDate() + 3)), // Default: Today → +3 days
+    ],
+    onClose: updatePrice, // Update price when user selects dates
+  });
+
+  function updatePrice() {
+    const dates = dateInput.value.split(" to ");
+    if (dates.length === 2) {
+      const checkIn = new Date(dates[0]);
+      const checkOut = new Date(dates[1]);
+      const nights = Math.round((checkOut - checkIn) / (1000 * 60 * 60 * 24));
+
+      if (nights > 0) {
+        totalAmount.innerText = nights * pricePerNight;
+      }
+    }
+  }
+
+  // Call updatePrice initially to reflect the default booking price
+  updatePrice();
+});

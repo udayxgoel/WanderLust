@@ -116,13 +116,11 @@ footer ul li {
 }
 
 /* show page */
-
-.show-img {
-  height: 67vh;
-}
-
-.btns {
-  display: flex;
+.listing-image {
+  width: 100%;
+  max-height: 400px; /* Adjust based on design */
+  object-fit: cover; /* Ensures proper scaling */
+  border-radius: 10px;
 }
 
 /*edit page*/

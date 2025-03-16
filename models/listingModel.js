@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const listingSchema = new Schema({
+  owner: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
   title: {
     type: String,
     required: true,
@@ -11,16 +15,21 @@ const listingSchema = new Schema({
     url: String,
     filename: String,
   },
-  price: Number,
-  location: String,
-  country: String,
+  address: String,
   category: {
     type: [String],
   },
-  owner: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
+  perks: {
+    type: [String],
+    default: [],
   },
+  extraInfo: {
+    type: String,
+  },
+  maxGuests: {
+    type: Number,
+  },
+  price: Number,
   geometry: {
     type: {
       type: String, // Don't do `{ location: { type: String } }`
