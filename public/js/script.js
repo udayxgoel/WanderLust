@@ -38,6 +38,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const bookBtn = document.getElementById("bookBtn");
   const pricePerNight = parseFloat(bookBtn.dataset.price);
 
+  // Hidden Inputs
+  const checkInInput = document.getElementById("checkIn");
+  const checkOutInput = document.getElementById("checkOut");
+  const totalPriceInput = document.getElementById("totalPrice");
+
   // Initialize Flatpickr for date selection
   flatpickr(dateInput, {
     mode: "range",
@@ -56,9 +61,15 @@ document.addEventListener("DOMContentLoaded", () => {
       const checkIn = new Date(dates[0]);
       const checkOut = new Date(dates[1]);
       const nights = Math.round((checkOut - checkIn) / (1000 * 60 * 60 * 24));
+      const totalPrice = nights * pricePerNight;
 
       if (nights > 0) {
-        totalAmount.innerText = nights * pricePerNight;
+        totalAmount.innerText = totalPrice;
+        document.getElementById("totalPrice").value = totalPrice;
+
+        // Store dates in correct format (YYYY-MM-DD)
+        checkInInput.value = checkIn.toISOString().split("T")[0];
+        checkOutInput.value = checkOut.toISOString().split("T")[0];
       }
     }
   }

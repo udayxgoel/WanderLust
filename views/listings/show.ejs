@@ -60,7 +60,8 @@
     <!-- Right Section: Booking Box -->
     <div class="col-md-5">
       <form
-        action="/youtube"
+        action="/bookings"
+        method="POST"
         id="bookingForm"
         novalidate
         class="needs-validation"
@@ -95,6 +96,7 @@
             <input
               type="number"
               id="guests"
+              name="guests"
               class="form-control"
               value="<%= listing.maxGuests %>"
               min="1"
@@ -112,6 +114,7 @@
             <input
               type="text"
               id="fullName"
+              name="fullName"
               class="form-control"
               value=""
               placeholder="Enter your name"
@@ -126,6 +129,7 @@
             <input
               type="tel"
               id="phoneNumber"
+              name="phoneNumber"
               class="form-control"
               placeholder="Enter your phone number"
               pattern="[0-9]{10}"
@@ -135,6 +139,12 @@
               Enter a valid 10-digit phone number.
             </div>
           </div>
+
+          <!-- Hidden Input -->
+          <input type="hidden" name="listingId" value="<%= listing._id %>" />
+          <input type="hidden" name="checkIn" id="checkIn" />
+          <input type="hidden" name="checkOut" id="checkOut" />
+          <input type="hidden" name="totalPrice" id="totalPrice" />
 
           <!-- Submit Button -->
           <button

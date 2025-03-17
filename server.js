@@ -9,7 +9,8 @@ const passport = require("./config/passportConfig.js");
 const flash = require("connect-flash");
 const ExpressError = require("./utils/ExpressError.js");
 const errorHandler = require("./middlewares/errorHandler.js");
-const listingsRouter = require("./routes/listingRoute.js");
+const listingRouter = require("./routes/listingRoute.js");
+const bookingRouter = require("./routes/bookingRoute.js");
 const userRouter = require("./routes/userRoute.js");
 
 // App Config
@@ -45,9 +46,9 @@ app.use((req, res, next) => {
 
 // Routes
 app.get("/", (req, res) => res.redirect("/listings"));
-app.use("/listings", listingsRouter);
-// app.use("/bookings", bookingsRouter);
 app.use("/user", userRouter);
+app.use("/listings", listingRouter);
+app.use("/bookings", bookingRouter);
 
 // Handle All
 app.all("*", (req, res, next) =>
