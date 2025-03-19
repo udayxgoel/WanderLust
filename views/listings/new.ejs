@@ -21,16 +21,18 @@
         />
         <div class="valid-feedback">Title looks good!</div>
       </div>
+
       <div class="mb-3">
         <label for="description" class="form-label">Description</label>
         <textarea
           name="listing[description]"
-          placeholder="enter description"
+          placeholder="Enter description"
           class="form-control"
           required
         ></textarea>
         <div class="invalid-feedback">Please enter a short description</div>
       </div>
+
       <div class="mb-3">
         <label for="image" class="form-label">Upload Listing Image</label>
         <input
@@ -40,8 +42,9 @@
           required
         />
       </div>
+
       <div class="row">
-        <div class="mb-3 col-md-4">
+        <div class="mb-3 col-md-6">
           <label for="price" class="form-label">Price</label>
           <input
             name="listing[price]"
@@ -51,29 +54,56 @@
           />
           <div class="invalid-feedback">Price should be valid</div>
         </div>
-        <div class="mb-3 col-md-8">
-          <label for="country" class="form-label">Country</label>
+
+        <div class="mb-3 col-md-6">
+          <label for="maxGuests" class="form-label">Maximum Guests</label>
           <input
-            type="text"
-            name="listing[country]"
-            placeholder="India"
+            type="number"
+            name="listing[maxGuests]"
+            placeholder="4"
             class="form-control"
             required
           />
-          <div class="invalid-feedback">Country name should be valid</div>
+          <div class="invalid-feedback">Please enter a valid number</div>
         </div>
       </div>
+
       <div class="mb-3">
-        <label for="location" class="form-label">Location</label>
+        <label for="address" class="form-label">Address</label>
         <input
           type="text"
-          name="listing[location]"
-          placeholder="Jaipur, Rajasthan"
+          name="listing[address]"
+          placeholder="Street, City, Country"
           class="form-control"
           required
         />
-        <div class="invalid-feedback">Location should be valid</div>
+        <div class="invalid-feedback">Address should be valid</div>
       </div>
+
+      <div class="mb-3">
+        <label for="perks" class="form-label">Perks</label>
+        <div class="row" id="perksContainer">
+          <% let allPerks = ["Wifi", "TV", "Free parking spot", "Radio", "Pets",
+          "Private entrance"]; %> <% allPerks.forEach(perk => { %>
+          <div class="col-md-4">
+            <div
+              class="form-check p-3 border rounded d-flex align-items-center"
+            >
+              <input
+                type="checkbox"
+                name="listing[perks]"
+                value="<%= perk %>"
+                class="form-check-input me-2 perk-checkbox"
+              />
+              <label class="form-check-label d-flex align-items-center">
+                <%= perk %>
+              </label>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+
       <div class="mb-3">
         <label for="category" class="form-label">Category</label>
         <select class="form-select" name="listing[category]" id="category">
@@ -90,6 +120,17 @@
           <option value="boats">Boats</option>
         </select>
       </div>
+
+      <div class="mb-3">
+        <label for="extraInfo" class="form-label">Extra Info</label>
+        <textarea
+          name="listing[extraInfo]"
+          placeholder="Any additional details..."
+          class="form-control"
+        ></textarea>
+        <div class="valid-feedback">Extra information is optional</div>
+      </div>
+
       <button class="btn btn-dark add-btn">Add</button>
     </form>
   </div>
