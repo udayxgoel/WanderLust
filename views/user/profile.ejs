@@ -42,6 +42,11 @@
 
   <!-- My Listings Section -->
   <div class="tab-pane" id="listings">
+    <a method="GET" href="/listings/new"
+      ><button class="new-listing">
+        <i class="fa-solid fa-plus" style="margin-right: 6px"></i> New Listing
+      </button></a
+    >
     <% listings.forEach(listing => { %>
     <div class="listing">
       <img src="<%= listing.image.url %>" alt="House" />
