@@ -1,4 +1,6 @@
 const User = require("../models/userModel.js");
+const Booking = require("../models/bookingModel.js");
+const Listing = require("../models/listingModel.js");
 
 module.exports.renderSignupForm = (req, res) => {
   res.render("user/signup.ejs");
@@ -33,7 +35,12 @@ module.exports.login = async (req, res) => {
 };
 
 module.exports.profile = async (req, res) => {
-  res.render("user/profile.ejs");
+  const bookings = await Booking.find({ user: req.user._id }).populate(
+    "listing"
+  );
+  const listings = await Listing.find({ owner: req.user._id });
+
+  res.render("user/profile", { bookings, listings, user: req.user });
 };
 
 module.exports.logout = (req, res, next) => {

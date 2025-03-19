@@ -5,6 +5,11 @@ body {
   min-height: 100vh;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .container {
   flex: 1;
 }
@@ -107,8 +112,6 @@ footer ul li {
   background-color: white;
 }
 
-/* new page */
-
 .add-btn,
 .edit-btn {
   background-color: #fe424d !important;
@@ -118,8 +121,8 @@ footer ul li {
 /* show page */
 .listing-image {
   width: 100%;
-  max-height: 400px; /* Adjust based on design */
-  object-fit: cover; /* Ensures proper scaling */
+  max-height: 400px;
+  object-fit: cover;
   border-radius: 10px;
 }
 
@@ -128,16 +131,6 @@ footer ul li {
 .preview-img {
   width: 250px !important;
   height: 150px !important;
-}
-
-.reviews {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.show-card {
-  padding-left: 0;
-  padding-right: 0;
 }
 
 /* Login & Signup section */
@@ -173,42 +166,188 @@ footer ul li {
   color: #fe424d;
 }
 
-.dashboard-container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: start;
-}
+/* Profile Page */
 
-.dashboard-tabs {
-  border-bottom: 2px solid #ddd;
-  background: #f8f9fa;
-  padding: 8px 0;
+/* Tabs */
+.tabs {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 10px;
+  margin: 20px 0;
 }
 
-.dashboard-tabs .nav-link {
-  font-size: 14px;
-  font-weight: 500;
-  padding: 8px 15px;
-  color: #333;
+.tab {
+  background: #f5f5f5;
   border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
   display: flex;
   align-items: center;
-  gap: 6px;
-  transition: all 0.2s ease-in-out;
+  gap: 5px;
 }
 
-.dashboard-tabs .nav-link i {
+.tab.active {
+  background: #ff385c;
+  color: white;
+}
+
+/* Tab Content */
+.tab-content {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.tab-pane {
+  display: none;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+/* Logout Button */
+.logout-btn {
+  display: block;
+  margin: 20px auto;
+  background: #ff385c;
+  color: white;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
   font-size: 16px;
+  text-align: center;
+  width: 100%;
+  max-width: 200px;
 }
 
-.dashboard-tabs .nav-link.active {
-  background: #fe424d;
-  color: white !important;
-  font-weight: 400 !important;
-  border-radius: 6px;
+/* Bookings */
+.booking {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #f8f8f8;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.booking img {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.booking-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.booking-info h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.booking-info p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Listings */
+.listing {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #f8f8f8;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.listing img {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.listing-info {
+  flex: 1;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background: #ffcc00;
+}
+
+.delete-btn {
+  background: #ff385c;
+  color: white;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .tabs {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px;
+    justify-content: center;
+  }
+
+  .listing {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .listing img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+  }
+
+  .booking {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .booking img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+  }
+
+  .booking-info {
+    align-items: center;
+  }
+
+  .logout-btn {
+    width: 100%;
+  }
 }

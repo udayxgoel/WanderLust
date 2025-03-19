@@ -1,50 +1,82 @@
 <% layout('/layouts/boilerplate') -%>
 
-<div class="dashboard-container">
-  <ul class="nav nav-tabs dashboard-tabs">
-    <li class="nav-item">
-      <a class="nav-link active" data-bs-toggle="tab" href="#profile">
-        <i class="fa-solid fa-user"></i> My Profile
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-bs-toggle="tab" href="#bookings">
-        <i class="fa-solid fa-calendar-check"></i> My Bookings
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-bs-toggle="tab" href="#listings">
-        <i class="fa-solid fa-house"></i> My Listings
-      </a>
-    </li>
-  </ul>
-  <div class="tab-content mt-4">
-    <!-- Profile Tab -->
-    <div id="profile" class="tab-pane fade show active">
-      <div class="card p-4">
-        <h3><i class="fa-solid fa-user"></i> Profile Details</h3>
-        <p class="mt-2"><strong>Name:</strong> Uday Goel</p>
-        <p><strong>Email:</strong> udaygoel@gmail.com</p>
-        <a href="/user/logout" class="btn btn-danger">
-          <i class="fa-solid fa-sign-out-alt"></i> Logout
-        </a>
-      </div>
-    </div>
+<!-- Tabs -->
+<div class="tabs">
+  <button class="tab active" onclick="showTab('profile')">
+    <i class="fas fa-user"></i> My Profile
+  </button>
+  <button class="tab" onclick="showTab('bookings')">
+    <i class="fas fa-list"></i> My Bookings
+  </button>
+  <button class="tab" onclick="showTab('listings')">
+    <i class="fas fa-home"></i> My Listings
+  </button>
+</div>
 
-    <!-- Bookings Tab -->
-    <div id="bookings" class="tab-pane fade">
-      <div class="card p-4">
-        <h3><i class="fa-solid fa-calendar-check"></i> My Bookings</h3>
-        <p>Here you can see all your bookings...</p>
-      </div>
-    </div>
+<!-- Tab Content -->
+<div class="tab-content">
+  <!-- My Profile Section -->
+  <div class="tab-pane active" id="profile">
+    <p><strong>Name:</strong> <%= user.username %></p>
+    <p><strong>Email:</strong> <%= user.email %></p>
 
-    <!-- Listings Tab -->
-    <div id="listings" class="tab-pane fade">
-      <div class="card p-4">
-        <h3><i class="fa-solid fa-house"></i> My Listings</h3>
-        <p>Here you can see all your listings...</p>
+    <a href="/user/logout"><button class="logout-btn">Logout</button></a>
+  </div>
+
+  <!-- My Bookings Section -->
+  <div class="tab-pane" id="bookings">
+    <% if (bookings.length === 0) { %>
+    <p class="no-bookings">You have no bookings yet.</p>
+    <% } else { %> <% bookings.forEach(booking => { %>
+    <div class="booking">
+      <img src="<%= booking.listing.image.url %>" alt="Hotel" />
+      <div class="booking-info">
+        <h3><%= booking.listing.title %></h3>
+        <p>📍 <%= booking.listing.address %></p>
+        <p>🗓 Check-in: <%= booking.checkIn %></p>
+        <p>💰 Total Price: ₹<%= booking.totalPrice %></p>
       </div>
     </div>
+    <% }); %> <% } %>
+  </div>
+
+  <!-- My Listings Section -->
+  <div class="tab-pane" id="listings">
+    <% listings.forEach(listing => { %>
+    <div class="listing">
+      <img src="<%= listing.image.url %>" alt="House" />
+      <div class="listing-info">
+        <h3><%= listing.title %></h3>
+        <p>📍 <%= listing.address %></p>
+        <p>💰 <strong>₹<%= listing.price %></strong> / night</p>
+      </div>
+      <div class="buttons">
+        <a method="GET" href="/listings/<%= listing._id %>/edit"
+          ><button class="edit-btn">Edit</button></a
+        >
+        <form
+          action="/listings/<%= listing._id %>?_method=DELETE"
+          method="POST"
+          style="display: inline"
+        >
+          <button type="submit" class="delete-btn">Delete</button>
+        </form>
+      </div>
+    </div>
+    <% }); %>
   </div>
 </div>
+
+<script>
+  function showTab(tabId) {
+    document
+      .querySelectorAll(".tab-pane")
+      .forEach((pane) => pane.classList.remove("active"));
+    document
+      .querySelectorAll(".tab")
+      .forEach((tab) => tab.classList.remove("active"));
+
+    document.getElementById(tabId).classList.add("active");
+    event.target.classList.add("active");
+  }
+</script>
