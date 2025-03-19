@@ -253,6 +253,12 @@ footer .d-flex span:hover {
   height: 150px !important;
 }
 
+.edit-btn,
+.add-btn {
+  background-color: #fe424d;
+  color: white;
+}
+
 @media (max-width: 768px) {
   .col-8.offset-2 {
     width: 100%;
@@ -335,7 +341,7 @@ footer .d-flex span:hover {
 }
 
 .tab.active {
-  background: #ff385c;
+  background: #fe424d;
   color: white;
 }
 
@@ -363,7 +369,7 @@ footer .d-flex span:hover {
 .logout-btn {
   display: block;
   margin: 20px auto;
-  background: #ff385c;
+  background: #fe424d;
   color: white;
   padding: 12px 18px;
   border: none;
@@ -445,25 +451,18 @@ footer .d-flex span:hover {
 }
 
 .edit-btn {
-  background: #ffcc00;
-}
-
-.delete-btn {
-  background: #ff385c;
+  background: #000000;
   color: white;
 }
 
-.edit-btn:hover {
-  background: #e6b800;
-}
-
-.delete-btn:hover {
-  background: #e13050;
+.delete-btn {
+  background: #fe424d;
+  color: white;
 }
 
 /* New Listing Button */
 .new-listing {
-  background: #ff385c;
+  background: #fe424d;
   color: white;
   border: none;
   padding: 10px;
