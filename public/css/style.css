@@ -28,17 +28,9 @@ a {
 }
 
 .logo-name {
-  font-size: 20px;
+  font-size: 22px;
   font-family: "Poppins", sans-serif;
-  font-weight: 500;
   margin-bottom: 0;
-}
-
-/* Fix WanderLust Font Issue */
-.navbar-nav a .logo-name {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  color: black;
 }
 
 /* Compass Icon */
@@ -107,11 +99,11 @@ a {
 /* Fix alignment for small screens */
 @media (max-width: 576px) {
   .logo-name {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .fa-compass {
-    font-size: 1.8rem;
+    font-size: 1.85rem;
   }
 
   .user-btn {
@@ -387,6 +379,10 @@ footer .d-flex span:hover {
 }
 
 /* Bookings & Listings - Common */
+.booking {
+  cursor: pointer;
+}
+
 .booking,
 .listing {
   display: flex;

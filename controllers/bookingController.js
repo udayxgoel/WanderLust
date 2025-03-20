@@ -38,3 +38,17 @@ module.exports.createBooking = async (req, res) => {
   req.flash("success", "Booking confirmed!");
   res.redirect("/user/profile/bookings");
 };
+
+module.exports.showBooking = async (req, res) => {
+  const { id } = req.params;
+  const booking = await Booking.findById(id)
+    .populate("listing")
+    .populate("user");
+
+  if (!booking) {
+    req.flash("error", "Booking not found!");
+    return res.redirect("/listings");
+  }
+
+  res.render("user/booking", { booking });
+};
