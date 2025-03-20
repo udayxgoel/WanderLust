@@ -34,7 +34,11 @@
         <div class="booking-info">
           <h3><%= booking.listing.title %></h3>
           <p>📍 <%= booking.listing.address %></p>
-          <p>🗓 Check-in: <%= booking.checkIn %></p>
+          <p>
+            <strong>Check-in:</strong> <%= new
+            Date(booking.checkIn).toLocaleDateString("en-IN", { weekday:
+            "short", day: "numeric", month: "short", year: "numeric" }) %>
+          </p>
           <p>💰 Total Price: ₹<%= booking.totalPrice %></p>
         </div>
       </div>

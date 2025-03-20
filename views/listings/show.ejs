@@ -1,19 +1,18 @@
 <% layout('/layouts/boilerplate') -%>
-<script>
-  const mapToken = "<%=process.env.MAP_TOKEN%>";
-  const coordinates = JSON.parse(
-    "<%- JSON.stringify(listing.geometry.coordinates) %>"
-  );
-</script>
 
 <div class="container mt-4">
+  <!-- Hidden -->
+  <div
+    id="mapCoordinates"
+    data-coordinates="<%= JSON.stringify(listing.geometry.coordinates || [0, 0]) %>"
+  ></div>
+
   <div class="row">
     <h2><%= listing.title %></h2>
     <p>
       <i class="fa-solid fa-location-dot"></i
       ><i class="mx-2"><%= listing.address %></i>
     </p>
-    <!-- Listing Image -->
     <div class="col-12">
       <img
         src="<%= listing.image.url %>"
@@ -75,7 +74,6 @@
             / per night
           </p>
 
-          <!-- Dates -->
           <div class="mb-3">
             <label class="fw-bold form-label">Dates</label>
             <input
@@ -90,7 +88,6 @@
             </div>
           </div>
 
-          <!-- Guests -->
           <div class="mb-3">
             <label class="fw-bold form-label">Number of guests:</label>
             <input
@@ -108,7 +105,6 @@
             </div>
           </div>
 
-          <!-- Full Name -->
           <div class="mb-3">
             <label class="fw-bold form-label">Your full name:</label>
             <input
@@ -123,7 +119,6 @@
             <div class="invalid-feedback">Please enter your full name.</div>
           </div>
 
-          <!-- Phone Number -->
           <div class="mb-3">
             <label class="fw-bold form-label">Phone number:</label>
             <input
@@ -146,7 +141,6 @@
           <input type="hidden" name="checkOut" id="checkOut" />
           <input type="hidden" name="totalPrice" id="totalPrice" />
 
-          <!-- Submit Button -->
           <button
             id="bookBtn"
             class="btn btn-danger w-100 py-2 fw-bold"
@@ -160,7 +154,6 @@
     </div>
   </div>
   <hr />
-  <!-- Extra Info -->
   <div class="row mt-4">
     <h2 class="fw-bold">Extra Info</h2>
     <p><%= listing.extraInfo %></p>
@@ -172,3 +165,18 @@
     <div class="mt-2" id="map" style="height: 450px"></div>
   </div>
 </div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const mapElement = document.querySelector("#mapCoordinates");
+    const coordinates = JSON.parse(mapElement.dataset.coordinates);
+    mapboxgl.accessToken = "<%= mapToken %>";
+
+    const map = new mapboxgl.Map({
+      container: "map", // container ID
+      center: coordinates, // starting position [lng, lat]
+      zoom: 12, // starting zoom
+    });
+
+    new mapboxgl.Marker({ color: "red" }).setLngLat(coordinates).addTo(map);
+  });
+</script>

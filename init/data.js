@@ -1,9 +1,9 @@
 const sampleListings = [
   {
-    owner: "615a1b2e3c4d5e6f7a8b9c0d", // Sample ObjectId for the User
+    owner: "615a1b2e3c4d5e6f7a8b9c0d",
     title: "Beachfront Paradise",
     description:
-      "Step out of your door onto the sandy beach. This beachfront condo offers the ultimate relaxation.",
+      "Step out of your door onto the sandy beach. This beachfront condo offers the ultimate relaxation with stunning ocean views. Perfect for families or couples looking for a luxurious getaway. Enjoy the sound of waves and the gentle sea breeze. The property features modern amenities and direct access to the beach.",
     image: {
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGhvdGVsc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
@@ -15,14 +15,14 @@ const sampleListings = [
     maxGuests: 6,
     geometry: {
       type: "Point",
-      coordinates: [-86.8515, 21.1619], // Longitude, Latitude
+      coordinates: [-86.8515, 21.1619],
     },
   },
   {
     owner: "615a1b2e3c4d5e6f7a8b9c0d",
     title: "Safari Lodge in the Serengeti",
     description:
-      "Experience the thrill of the wild in a comfortable safari lodge. Witness the Great Migration up close.",
+      "Experience the thrill of the wild in a comfortable safari lodge. Witness the Great Migration up close and enjoy guided wildlife tours. The lodge offers luxury accommodations with breathtaking views of the savannah. Perfect for adventure seekers and nature enthusiasts. Relax in the evening by the campfire under the African sky.",
     image: {
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fG1vdW50YWlufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
@@ -34,14 +34,14 @@ const sampleListings = [
     maxGuests: 4,
     geometry: {
       type: "Point",
-      coordinates: [34.8385, -2.3333], // Longitude, Latitude
+      coordinates: [34.8385, -2.3333],
     },
   },
   {
     owner: "615a1b2e3c4d5e6f7a8b9c0d",
     title: "Mountain Retreat",
     description:
-      "Unplug and unwind in this peaceful mountain cabin. Surrounded by nature, it's a perfect place to recharge.",
+      "Unplug and unwind in this peaceful mountain cabin. Surrounded by nature, it's a perfect place to recharge and enjoy the scenic beauty. The cabin features a cozy fireplace and large windows with stunning mountain views. Ideal for hiking, skiing, or simply relaxing. A true escape from the hustle and bustle of city life.",
     image: {
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aG90ZWxzfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
@@ -53,14 +53,14 @@ const sampleListings = [
     maxGuests: 4,
     geometry: {
       type: "Point",
-      coordinates: [-106.8175, 39.1911], // Longitude, Latitude
+      coordinates: [-106.8175, 39.1911],
     },
   },
   {
     owner: "615a1b2e3c4d5e6f7a8b9c0d",
     title: "Historic Villa in Tuscany",
     description:
-      "Experience the charm of Tuscany in this beautifully restored villa. Explore the rolling hills and vineyards.",
+      "Experience the charm of Tuscany in this beautifully restored villa. Explore the rolling hills and vineyards that surround the property. The villa features historic architecture with modern amenities, including a private garden and wine tasting tours. Perfect for a romantic getaway or a family vacation. Enjoy the authentic Italian countryside lifestyle.",
     image: {
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
@@ -72,14 +72,14 @@ const sampleListings = [
     maxGuests: 8,
     geometry: {
       type: "Point",
-      coordinates: [11.2558, 43.7696], // Longitude, Latitude
+      coordinates: [11.2558, 43.7696],
     },
   },
   {
     owner: "615a1b2e3c4d5e6f7a8b9c0d",
     title: "Secluded Treehouse Getaway",
     description:
-      "Live among the treetops in this unique treehouse retreat. A true nature lover's paradise.",
+      "Live among the treetops in this unique treehouse retreat. A true nature lover's paradise, surrounded by lush forests and stunning views. The treehouse is eco-friendly and designed for a peaceful escape. Perfect for couples or solo travelers seeking tranquility. Wake up to the sounds of birds and the rustling of leaves.",
     image: {
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGhvdGVsc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
@@ -91,14 +91,14 @@ const sampleListings = [
     maxGuests: 2,
     geometry: {
       type: "Point",
-      coordinates: [-122.6765, 45.5231], // Longitude, Latitude
+      coordinates: [-122.6765, 45.5231],
     },
   },
   {
     owner: "615a1b2e3c4d5e6f7a8b9c0d",
     title: "Cozy Beachfront Cottage",
     description:
-      "Escape to this charming beachfront cottage for a relaxing getaway. Enjoy stunning ocean views and easy access to the beach.",
+      "Escape to this charming beachfront cottage for a relaxing getaway. Enjoy stunning ocean views and easy access to the beach. The cottage features a cozy interior with a fire pit for evening gatherings. Perfect for families or couples looking for a peaceful retreat. Spend your days sunbathing or exploring the nearby coastal town.",
     image: {
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
@@ -110,14 +110,14 @@ const sampleListings = [
     maxGuests: 4,
     geometry: {
       type: "Point",
-      coordinates: [-118.7815, 34.0259], // Longitude, Latitude
+      coordinates: [-118.7815, 34.0259],
     },
   },
   {
     owner: "615a1b2e3c4d5e6f7a8b9c0d",
     title: "Rustic Cabin by the Lake",
     description:
-      "Spend your days fishing and kayaking on the serene lake. This cozy cabin is perfect for outdoor enthusiasts.",
+      "Spend your days fishing and kayaking on the serene lake. This cozy cabin is perfect for outdoor enthusiasts and families. The cabin features a fireplace and large windows with stunning lake views. Enjoy the peaceful surroundings and the sound of nature. A perfect spot for a weekend getaway or a longer vacation.",
     image: {
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1vdW50YWlufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
@@ -129,14 +129,14 @@ const sampleListings = [
     maxGuests: 6,
     geometry: {
       type: "Point",
-      coordinates: [-120.0314, 38.9394], // Longitude, Latitude
+      coordinates: [-120.0314, 38.9394],
     },
   },
   {
     owner: "615a1b2e3c4d5e6f7a8b9c0d",
     title: "Luxury Penthouse with City Views",
     description:
-      "Indulge in luxury living with panoramic city views from this stunning penthouse apartment.",
+      "Indulge in luxury living with panoramic city views from this stunning penthouse apartment. The penthouse features a rooftop pool, gym access, and modern interiors. Perfect for business travelers or those seeking a luxurious urban escape. Enjoy the vibrant city life while relaxing in style. A true gem in the heart of the city.",
     image: {
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1622396481328-9b1b78cdd9fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2t5JTIwdmFjYXRpb258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
@@ -148,14 +148,14 @@ const sampleListings = [
     maxGuests: 4,
     geometry: {
       type: "Point",
-      coordinates: [-118.2437, 34.0522], // Longitude, Latitude
+      coordinates: [-118.2437, 34.0522],
     },
   },
   {
     owner: "615a1b2e3c4d5e6f7a8b9c0d",
     title: "Ski-In/Ski-Out Chalet",
     description:
-      "Hit the slopes right from your doorstep in this ski-in/ski-out chalet in the Swiss Alps.",
+      "Hit the slopes right from your doorstep in this ski-in/ski-out chalet in the Swiss Alps. The chalet offers luxury accommodations with a hot tub and fireplace. Perfect for winter sports enthusiasts and families. Enjoy the breathtaking mountain views and cozy evenings by the fire. A dream destination for ski lovers.",
     image: {
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1502784444187-359ac186c5bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHNreSUyMHZhY2F0aW9ufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
@@ -167,14 +167,14 @@ const sampleListings = [
     maxGuests: 8,
     geometry: {
       type: "Point",
-      coordinates: [7.2145, 46.0988], // Longitude, Latitude
+      coordinates: [7.2145, 46.0988],
     },
   },
   {
     owner: "615a1b2e3c4d5e6f7a8b9c0d",
     title: "Modern Loft in Downtown",
     description:
-      "Stay in the heart of the city in this stylish loft apartment. Perfect for urban explorers!",
+      "Stay in the heart of the city in this stylish loft apartment. Perfect for urban explorers and business travelers. The loft features modern design, central location, and gym access. Enjoy the vibrant city life and easy access to restaurants and shops. A perfect blend of comfort and convenience in the city.",
     image: {
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
@@ -186,17 +186,17 @@ const sampleListings = [
     maxGuests: 4,
     geometry: {
       type: "Point",
-      coordinates: [-74.006, 40.7128], // Longitude, Latitude
+      coordinates: [-74.006, 40.7128],
     },
   },
   {
     owner: "615a1b2e3c4d5e6f7a8b9c0d",
     title: "Historic Castle in Scotland",
     description:
-      "Step back in time and enjoy the grandeur of this historic castle. Perfect for a regal experience.",
+      "Step back in time and enjoy the grandeur of this historic castle. Perfect for a regal experience with family or friends. The castle features a grand hall, scenic views, and luxurious accommodations. Explore the historic architecture and the surrounding Scottish Highlands. A truly unique and unforgettable stay.",
     image: {
       filename: "listingimage",
-      url: "https://images.unsplash.com/photo-1569494602-dac4e7f2e6b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGNhc3RsZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      url: "https://images.unsplash.com/photo-1557096002-7f215e6b5dcf?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     price: 5000,
     address: "1 Castle Rd, Edinburgh, Scotland",
@@ -205,17 +205,17 @@ const sampleListings = [
     maxGuests: 10,
     geometry: {
       type: "Point",
-      coordinates: [-3.1883, 55.9533], // Longitude, Latitude
+      coordinates: [-3.1883, 55.9533],
     },
   },
   {
     owner: "615a1b2e3c4d5e6f7a8b9c0d",
     title: "Private Island Retreat",
     description:
-      "Escape to your own private island paradise. Enjoy exclusive access to pristine beaches and crystal-clear waters.",
+      "Escape to your own private island paradise. Enjoy exclusive access to pristine beaches and crystal-clear waters. The retreat features an infinity pool, butler service, and luxury accommodations. Perfect for a romantic getaway or a family vacation. Experience ultimate privacy and relaxation in this tropical haven.",
     image: {
       filename: "listingimage",
-      url: "https://images.unsplash.com/photo-1568008387-e36e6b7d5602?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3RhcmxpbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      url: "https://images.unsplash.com/photo-1554336903-a5f31529dd4b?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     price: 10000,
     address: "Private Island, Maldives",
@@ -224,14 +224,14 @@ const sampleListings = [
     maxGuests: 8,
     geometry: {
       type: "Point",
-      coordinates: [73.2207, 3.2028], // Longitude, Latitude
+      coordinates: [73.2207, 3.2028],
     },
   },
   {
     owner: "615a1b2e3c4d5e6f7a8b9c0d",
     title: "Charming Cottage in the Cotswolds",
     description:
-      "Escape to the picturesque Cotswolds in this quaint and charming cottage with a thatched roof.",
+      "Escape to the picturesque Cotswolds in this quaint and charming cottage with a thatched roof. The cottage features a beautiful garden and a cozy fireplace. Perfect for a romantic getaway or a peaceful retreat. Explore the charming villages and rolling hills of the countryside. A true English countryside experience.",
     image: {
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1602088113235-229c19758e9f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YmVhY2glMjB2YWNhdGlvbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
@@ -243,14 +243,14 @@ const sampleListings = [
     maxGuests: 4,
     geometry: {
       type: "Point",
-      coordinates: [-1.8216, 51.8467], // Longitude, Latitude
+      coordinates: [-1.8216, 51.8467],
     },
   },
   {
     owner: "615a1b2e3c4d5e6f7a8b9c0d",
     title: "Historic Brownstone in Boston",
     description:
-      "Step back in time in this elegant historic brownstone located in the heart of Boston.",
+      "Step back in time in this elegant historic brownstone located in the heart of Boston. The property features historic charm with modern amenities. Perfect for families or groups looking for a unique stay. Enjoy the central location and explore the city's rich history. A perfect blend of old-world charm and modern comfort.",
     image: {
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1533619239233-6280475a633a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHNreSUyMHZhY2F0aW9ufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
@@ -262,14 +262,14 @@ const sampleListings = [
     maxGuests: 6,
     geometry: {
       type: "Point",
-      coordinates: [-71.0589, 42.3601], // Longitude, Latitude
+      coordinates: [-71.0589, 42.3601],
     },
   },
   {
     owner: "615a1b2e3c4d5e6f7a8b9c0d",
     title: "Beachfront Bungalow in Bali",
     description:
-      "Relax on the sandy shores of Bali in this beautiful beachfront bungalow with a private pool.",
+      "Relax on the sandy shores of Bali in this beautiful beachfront bungalow with a private pool. The bungalow offers stunning ocean views and direct beach access. Perfect for a romantic getaway or a family vacation. Enjoy the tropical climate and the serene surroundings. A true paradise in Bali.",
     image: {
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1602391833977-358a52198938?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fGNhbXBpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
@@ -281,14 +281,14 @@ const sampleListings = [
     maxGuests: 4,
     geometry: {
       type: "Point",
-      coordinates: [115.1696, -8.4095], // Longitude, Latitude
+      coordinates: [115.1696, -8.4095],
     },
   },
   {
     owner: "615a1b2e3c4d5e6f7a8b9c0d",
     title: "Mountain View Cabin in Banff",
     description:
-      "Enjoy breathtaking mountain views from this cozy cabin in the Canadian Rockies.",
+      "Enjoy breathtaking mountain views from this cozy cabin in the Canadian Rockies. The cabin is perfect for nature lovers and outdoor enthusiasts. Enjoy hiking trails, scenic views, and a cozy fireplace. A perfect spot for a winter getaway or a summer retreat. Experience the beauty of Banff in comfort and style.",
     image: {
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1521401830884-6c03c1c87ebb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGxvZGdlfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
@@ -300,14 +300,14 @@ const sampleListings = [
     maxGuests: 6,
     geometry: {
       type: "Point",
-      coordinates: [-115.5718, 51.1784], // Longitude, Latitude
+      coordinates: [-115.5718, 51.1784],
     },
   },
   {
     owner: "615a1b2e3c4d5e6f7a8b9c0d",
     title: "Art Deco Apartment in Miami",
     description:
-      "Step into the glamour of the 1920s in this stylish Art Deco apartment in South Beach.",
+      "Step into the glamour of the 1920s in this stylish Art Deco apartment in South Beach. The apartment features historic design with modern amenities. Enjoy the ocean view and rooftop pool. Perfect for a luxurious urban escape. Experience the vibrant nightlife and cultural scene of Miami.",
     image: {
       filename: "listingimage",
       url: "https://plus.unsplash.com/premium_photo-1670963964797-942df1804579?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGxvZGdlfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
@@ -319,14 +319,14 @@ const sampleListings = [
     maxGuests: 4,
     geometry: {
       type: "Point",
-      coordinates: [-80.1918, 25.7617], // Longitude, Latitude
+      coordinates: [-80.1918, 25.7617],
     },
   },
   {
     owner: "615a1b2e3c4d5e6f7a8b9c0d",
     title: "Tropical Villa in Phuket",
     description:
-      "Escape to a tropical paradise in this luxurious villa with a private infinity pool in Phuket.",
+      "Escape to a tropical paradise in this luxurious villa with a private infinity pool in Phuket. The villa offers stunning ocean views and direct beach access. Perfect for a romantic getaway or a family vacation. Enjoy the tropical climate and the serene surroundings. A true paradise in Thailand.",
     image: {
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1470165301023-58dab8118cc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGxvZGdlfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
@@ -338,14 +338,14 @@ const sampleListings = [
     maxGuests: 8,
     geometry: {
       type: "Point",
-      coordinates: [98.295, 7.8804], // Longitude, Latitude
+      coordinates: [98.295, 7.8804],
     },
   },
   {
     owner: "615a1b2e3c4d5e6f7a8b9c0d",
     title: "Historic Castle in Scotland",
     description:
-      "Live like royalty in this historic castle in the Scottish Highlands. Explore the rugged beauty of the area.",
+      "Live like royalty in this historic castle in the Scottish Highlands. Explore the rugged beauty of the area and enjoy the grand hall and scenic views. The castle offers luxurious accommodations and historic charm. Perfect for a family vacation or a special event. A truly unforgettable experience in Scotland.",
     image: {
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1585543805890-6051f7829f98?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGJlYWNoJTIwdmFjYXRpb258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
@@ -357,14 +357,14 @@ const sampleListings = [
     maxGuests: 12,
     geometry: {
       type: "Point",
-      coordinates: [-4.5001, 56.4914], // Longitude, Latitude
+      coordinates: [-4.5001, 56.4914],
     },
   },
   {
     owner: "615a1b2e3c4d5e6f7a8b9c0d",
     title: "Desert Oasis in Dubai",
     description:
-      "Experience luxury in the middle of the desert in this opulent oasis in Dubai with a private pool.",
+      "Experience luxury in the middle of the desert in this opulent oasis in Dubai. The property features a private pool, desert views, and luxury amenities. Perfect for a romantic getaway or a family vacation. Enjoy the tranquility of the desert and the luxurious accommodations. A unique and unforgettable experience in Dubai.",
     image: {
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1518684079-3c830dcef090?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZHViYWl8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
@@ -376,7 +376,26 @@ const sampleListings = [
     maxGuests: 6,
     geometry: {
       type: "Point",
-      coordinates: [55.2708, 25.2048], // Longitude, Latitude
+      coordinates: [55.2708, 25.2048],
+    },
+  },
+  {
+    owner: "615a1b2e3c4d5e6f7a8b9c0d",
+    title: "Himalayan Serenity Cabin",
+    description:
+      "A cozy wooden cabin surrounded by the breathtaking Himalayas, perfect for nature lovers and adventure seekers. The cabin offers stunning mountain views and a peaceful atmosphere. Enjoy hiking trails, bonfire evenings, and the beauty of nature. Perfect for a romantic getaway or a solo retreat. A true escape in the mountains.",
+    image: {
+      filename: "listingimage",
+      url: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=60",
+    },
+    price: 3500,
+    address: "Manali, Himachal Pradesh, India",
+    category: ["Mountains", "Cabin", "Adventure"],
+    perks: ["Mountain View", "Bonfire Area", "Free Wi-Fi", "Hiking Trails"],
+    maxGuests: 4,
+    geometry: {
+      type: "Point",
+      coordinates: [77.1887, 32.2396],
     },
   },
 ];

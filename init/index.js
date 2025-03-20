@@ -63,10 +63,7 @@ const initDB = async () => {
     ...obj,
     owner: "67d5466a980cba0bc596cc6f",
     price: obj.price * 25,
-    category: [
-      `${categoryAll[Math.floor(Math.random() * 22)]}`,
-      `${categoryAll[Math.floor(Math.random() * 22)]}`,
-    ],
+    category: categoryAll[Math.floor(Math.random() * 22)],
     perks: getRandomPerks(),
     extraInfo: info,
   }));

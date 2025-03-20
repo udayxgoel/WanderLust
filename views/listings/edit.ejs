@@ -40,6 +40,7 @@
         <div class="mb-3 col-md-4">
           <label for="price" class="form-label">Price</label>
           <input
+            type="number"
             name="listing[price]"
             value="<%= listing.price %>"
             class="form-control"
@@ -103,26 +104,29 @@
           <option value="<%= listing.category %>" selected>
             <%= listing.category %>
           </option>
-          <option value="rooms">Rooms</option>
-          <option value="iconic-cities">Iconic Cities</option>
-          <option value="mountains">Mountains</option>
-          <option value="castles">Castles</option>
-          <option value="amazing-pools">Amazing Pools</option>
-          <option value="camping">Camping</option>
-          <option value="arctic">Arctic</option>
-          <option value="farms">Farms</option>
-          <option value="domes">Domes</option>
-          <option value="boats">Boats</option>
+          <option value="Rooms">Rooms</option>
+          <option value="Iconic Cities">Iconic Cities</option>
+          <option value="Mountains">Mountains</option>
+          <option value="Castles">Castles</option>
+          <option value="Amazing Pools">Amazing Pools</option>
+          <option value="Camping">Camping</option>
+          <option value="Arctic">Arctic</option>
+          <option value="Farms">Farms</option>
+          <option value="Domes">Domes</option>
+          <option value="Boats">Boats</option>
         </select>
       </div>
 
       <div class="mb-3">
         <label for="extraInfo" class="form-label">Extra Info</label>
         <textarea name="listing[extraInfo]" class="form-control">
-          <%= listing.extraInfo %></textarea
+<%= listing.extraInfo %></textarea
         >
         <div class="valid-feedback">Extra information is optional</div>
       </div>
+
+      <!-- Hidden -->
+      <p data-perks="<%=listing.perks || [] %>" id="stored-perks"></p>
 
       <button class="btn add-btn">Edit</button>
     </form>
@@ -131,9 +135,9 @@
 <br />
 <script>
   // Get stored perks from the server
-  const storedPerks = <%- JSON.stringify(listing.perks || []) %>;
+  const storedPerks = document.querySelector("#stored-perks").dataset.perks;
 
-  document.querySelectorAll('.perk-checkbox').forEach(checkbox => {
+  document.querySelectorAll(".perk-checkbox").forEach((checkbox) => {
     if (storedPerks.includes(checkbox.dataset.perk)) {
       checkbox.checked = true;
     }

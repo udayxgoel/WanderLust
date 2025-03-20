@@ -17,7 +17,7 @@ const listingSchema = new Schema({
   },
   address: String,
   category: {
-    type: [String],
+    type: String,
   },
   perks: {
     type: [String],
@@ -38,7 +38,7 @@ const listingSchema = new Schema({
     },
     coordinates: {
       type: [Number],
-      required: true,
+      default: [78.9629, 20.5937],
     },
   },
 });

@@ -36,7 +36,7 @@ module.exports.createBooking = async (req, res) => {
 
   const newBooking = await booking.save();
   req.flash("success", "Booking confirmed!");
-  res.redirect("/user/profile/bookings");
+  res.redirect(`bookings/${newBooking._id}`);
 };
 
 module.exports.showBooking = async (req, res) => {
