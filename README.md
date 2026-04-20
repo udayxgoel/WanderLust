@@ -1,6 +1,6 @@
 # WanderLust
 
-![Portfolio preview](./public/assets/project_demo.png)
+![WanderLust preview](./public/assets/project_demo.png)
 
 ## Overview
 
